@@ -57,7 +57,7 @@ for file in 1_bam/*.sorted.rmdup.bam
 do
 	filename=${file##*/} 
 	echo "Generating human readable pileup to sum mapping for ${filename%%.*} ######################################"
-	bcftools mpileup --threads 10 -q 30 -O u -f 0_reference/ref_genome.fasta $file | bcftools call -O v -mv - > 2_vcf/${filename%%.*}.vcf 
+	bcftools mpileup --threads 10 -q 30 -I -O u -f 0_reference/ref_genome.fasta $file | bcftools call -O v -mv - > 2_vcf/${filename%%.*}.vcf 
 done
 
 
