@@ -44,10 +44,10 @@ snippy-clean_full_aln core.full.aln > clean.full.aln
 #snp-sites -c gubbins.filtered_polymorphic_sites.fasta > clean.core.aln
 
 echo "FASTTREE: Generating Phylogenetic tree using core (variants) only." 
-FastTree -gtr -nt clean.core.aln > clean.core.tree
+FastTree clean.core.aln > clean.core.tree
 
 echo "FASTTREE: Generating Phylogenetic tree using full sequence." 
-FastTree -gtr -nt clean.full.aln > clean.full.tree
+FastTree clean.full.aln > clean.full.tree
 
 echo "Project 1 SNIPPY Completed."
 echo `date`
